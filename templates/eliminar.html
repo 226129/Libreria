@@ -1,0 +1,12 @@
+{% extends "structure.html" %}
+
+{% block content %}
+  <h1>Confirmar eliminación</h1>
+  <p>¿Estás seguro de que quieres eliminar el libro "{{ object.title }}"?</p>
+  
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'book_list'%}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock content %}
